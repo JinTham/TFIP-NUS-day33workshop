@@ -1,0 +1,3 @@
+<button *ngIf="!reveal" type="button" (click)="revealAnswer()">Reveal</button>
+<h3 *ngIf="reveal">Answer: {{answerString}}</h3>
+<p>Remaining tries: {{tries}}</p>

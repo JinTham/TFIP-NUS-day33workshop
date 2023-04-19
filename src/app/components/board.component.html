@@ -1,0 +1,63 @@
+<h3>Game Board</h3>
+<div>
+    <table>
+        <tr *ngFor="let i of tryList; let idx = index">
+            <td>{{i.firstPos}}</td>
+            <td>{{i.secondPos}}</td>
+            <td>{{i.thirdPos}}</td>
+            <td>{{i.fourthPos}}</td>
+            <td> ---------------- {{hintList[idx]}} </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <form [formGroup]="form" (ngSubmit)="processForm()">
+        <table>
+            <tr>
+                <td>
+                    <select formControlName="firstPos">
+                        <option value="R">Red</option>
+                        <option value="G">Green</option>
+                        <option value="B">Blue</option>
+                        <option value="Y">Yellow</option>
+                        <option value="O">Orange</option>
+                        <option value="P">Purple</option>
+                    </select>
+                </td>
+                <td>
+                    <select formControlName="secondPos">
+                        <option value="R">Red</option>
+                        <option value="G">Green</option>
+                        <option value="B">Blue</option>
+                        <option value="Y">Yellow</option>
+                        <option value="O">Orange</option>
+                        <option value="P">Purple</option>
+                    </select>
+                </td>
+                <td>
+                    <select formControlName="thirdPos">
+                        <option value="R">Red</option>
+                        <option value="G">Green</option>
+                        <option value="B">Blue</option>
+                        <option value="Y">Yellow</option>
+                        <option value="O">Orange</option>
+                        <option value="P">Purple</option>
+                    </select>
+                </td>
+                <td>
+                    <select formControlName="fourthPos">
+                        <option value="R">Red</option>
+                        <option value="G">Green</option>
+                        <option value="B">Blue</option>
+                        <option value="Y">Yellow</option>
+                        <option value="O">Orange</option>
+                        <option value="P">Purple</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="submit" [disabled]="form.invalid">Check</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
